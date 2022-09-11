@@ -8,6 +8,5 @@ loadSprite("bean", "./sprites/bean.png")
 
 add([
 	sprite("bean"),
-	color(BLUE),
-	pos(30, 404),
+	pos(40, 80)
 ]);

@@ -8,8 +8,8 @@ const __filename = path.fromFileUrl(import.meta.url);
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
 const app = opine();
 
-function buildGame() {
-	esbuild.build({
+async function buildGame() {
+	await esbuild.build({
 		bundle: true,
 		entryPoints: ["code/main.ts"],
 		plugins: [httpImports({
@@ -25,14 +25,14 @@ function buildGame() {
 	});
 }
 
-app.get("/", (_req, res) => {
-	buildGame();
-	
+app.get("/", async (_req, res) => {
+	await buildGame();
+
 	res.sendFile(__dirname + "/index.html");
 });
 
 app.use(serveStatic(__dirname));
 
 app.listen(3000, () =>
-	console.log("server has started on http://localhost:3000 🚀")
+	console.log("kaboom 💥 (check http://localhost:3000)")
 );
