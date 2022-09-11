@@ -1,7 +1,7 @@
 {
 	"velociraptor": {
 		"scripts": {
-			"start": "deno run --allow-env --allow-net --allow-read --allow-run run.ts",
+			"start": "deno run --allow-env --allow-net --allow-read --allow-write --allow-run run.ts",
 			"dev": {
 				"cmd": "deno run --allow-env --allow-net --allow-read --allow-run run.ts",
 				"watch": [
